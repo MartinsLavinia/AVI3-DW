@@ -1,0 +1,5 @@
+@baseUrl = http://localhost:3000
+
+### 15. Teste manual: pare o MySQL, envie esta requisição e espere HTTP 500.
+### Depois, reinicie o MySQL para continuar usando a API.
+GET {{baseUrl}}/vendas

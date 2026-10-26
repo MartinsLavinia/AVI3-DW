@@ -1,0 +1,63 @@
+@baseUrl = http://localhost:3000
+
+### 9. Cadastrar vendedor 1 de 5
+POST {{baseUrl}}/vendedores
+Content-Type: application/json
+
+{
+  "nome": "Ana Lima",
+  "metaMensal": 10000,
+  "percentualBase": 5
+}
+
+### 9. Cadastrar vendedor 2 de 5
+POST {{baseUrl}}/vendedores
+Content-Type: application/json
+
+{
+  "nome": "Bruno Alves",
+  "metaMensal": 12000,
+  "percentualBase": 5.5
+}
+
+### 9. Cadastrar vendedor 3 de 5
+POST {{baseUrl}}/vendedores
+Content-Type: application/json
+
+{
+  "nome": "Carla Souza",
+  "metaMensal": 15000,
+  "percentualBase": 6
+}
+
+### 9. Cadastrar vendedor 4 de 5
+POST {{baseUrl}}/vendedores
+Content-Type: application/json
+
+{
+  "nome": "Diego Rocha",
+  "metaMensal": 9000,
+  "percentualBase": 4.5
+}
+
+### 9. Cadastrar vendedor 5 de 5
+POST {{baseUrl}}/vendedores
+Content-Type: application/json
+
+{
+  "nome": "Eva Martins",
+  "metaMensal": 11000,
+  "percentualBase": 5
+}
+
+### Listar vendedores e anotar os IDs retornados para usar nos outros arquivos
+GET {{baseUrl}}/vendedores
+
+### 12. Atualizar meta mensal e percentual base (troque o ID pelo retornado acima)
+PUT {{baseUrl}}/vendedores/1
+Content-Type: application/json
+
+{
+  "metaMensal": 13000,
+  "percentualBase": 6
+}

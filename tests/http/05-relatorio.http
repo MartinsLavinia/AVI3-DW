@@ -1,0 +1,7 @@
+@baseUrl = http://localhost:3000
+
+### 14. Relatório mensal de outubro de 2026 (metas são comparadas ao total vendido no período)
+GET {{baseUrl}}/relatorios/performance?inicio=2026-10-01&fim=2026-10-31
+
+### Relatório com intervalo inválido - esperado: 400
+GET {{baseUrl}}/relatorios/performance?inicio=2026-11-01&fim=2026-10-01

@@ -1,0 +1,33 @@
+@baseUrl = http://localhost:3000
+@idVendedorExistente = 1
+
+### 11. Venda para vendedor inexistente - esperado: 404
+POST {{baseUrl}}/vendas
+Content-Type: application/json
+
+{"idVendedor":999999,"idRegiao":1,"valorVenda":500,"tipoCliente":"PF"}
+
+### 11. Depois de registrar as 15 vendas válidas, desative um vendedor existente antes da próxima requisição
+PATCH {{baseUrl}}/vendedores/{{idVendedorExistente}}/desativar
+
+### 11. Venda para vendedor inativo - esperado: 409
+POST {{baseUrl}}/vendas
+Content-Type: application/json
+
+{"idVendedor":{{idVendedorExistente}},"idRegiao":1,"valorVenda":500,"tipoCliente":"PF"}
+
+### Venda com região inexistente - esperado: 404
+POST {{baseUrl}}/vendas
+Content-Type: application/json
+
+{"idVendedor":1,"idRegiao":999999,"valorVenda":500,"tipoCliente":"PJ"}
+
+### Venda com valor inválido - esperado: 400
+POST {{baseUrl}}/vendas
+Content-Type: application/json
+
+{"idVendedor":1,"idRegiao":1,"valorVenda":0,"tipoCliente":"PF"}
+
+### Código duplicado: ainda não pode ser testado via API.
+### A API gera id_venda automaticamente e ignora qualquer idVenda recebido no JSON.
+### Para testar isso pela API, a rota precisará aceitar um id_venda opcional.
