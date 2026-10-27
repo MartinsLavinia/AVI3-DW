@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "teste:jornada": "node teste-jornada.js",
     "dev": "nodemon src/index.js"
   },
   "keywords": [],
